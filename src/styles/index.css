@@ -1,0 +1,43 @@
+/* 移动基站全局样式：以 Vant 变量为唯一色彩来源（深浅色随 van-theme-dark 自动切换），禁止硬编码浅色值 */
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto,
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--van-background);
+  color: var(--van-text-color);
+  /* 防止 iOS 橡皮筋滚动带动整页 */
+  overscroll-behavior-y: none;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 安全区适配（iPhone 刘海/底部横条） */
+.safe-area-top {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+}
+.safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 表单行版式（移动端统一）：标题 label 列右对齐，输入控件左对齐 */
+.van-field__label {
+  text-align: right;
+}
+.van-field__control,
+.van-field__body {
+  text-align: left;
+}
